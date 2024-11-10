@@ -111,6 +111,23 @@ The optimal model is the one that incorporates all five variables.
 We were able to concentrate its power on the corrected r-squared value by using leaps. Only the highest adjusted r-squared values for the first, second, third, fourth, and fifth variables for pike would then be provided. L1 and L3 are the best two regressors for the highest adjusted r-squared value, making them the top two regressor models, according to this type of jump analysis.
 
 ## Roach
+```{r}
+library(leaps)
+regsubsets.out <-
+    regsubsets(Weight ~ .,
+               data = Roach,
+               nbest = 1,       # 1 best model for each number of predictors
+               nvmax = NULL,    # NULL for no limit on number of variables
+               force.in = NULL, force.out = NULL,
+               method = "exhaustive")
+
+summary.out <- summary(regsubsets.out)
+as.data.frame(summary.out$outmat)
+library(car)
+subsets(regsubsets.out,statistic="adjr2",legend="bottomleft",main="Adjusted R^2")
+```
+
+The model with two variables—L3 and W—seems to be the best one, making it the best two regressor model as well.
 
 ### Best Models
 
