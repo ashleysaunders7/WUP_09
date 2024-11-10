@@ -139,3 +139,4 @@ This demonstrates that the model that targets the adjusted r-squared value and h
 Leaps has demonstrated that the model with two variables, L3 and W, has the highest adjusted r-squared value. The model using L3 and W is therefore the best two regressor model.
 
 ## Final Summary Statements
+Leaps allowed us to readily identify the optimal model for a combination of variables from combinations of 1 to 5, with 5 being the maximum for our fish data. This allowed us to target the modified r-squared value. This made it simple to compare and identify the most effective regression models.
