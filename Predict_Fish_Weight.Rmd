@@ -75,7 +75,11 @@ which.max(summary.out$adjr2)
 The best model, according to the max codeblock, is number two. Its r-squared value is greater.
 
 ### Best Two regressor model
+```{r}
+summary.out$which[2,]
+```
 
+This data summary demonstrates that the model that incorporates H and W is the best model for perch fish. It has the greatest Adjusted r-squared value with two variables, indicating that it is the best two regression model.
 
 ## Pike
 
