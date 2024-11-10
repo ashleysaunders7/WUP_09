@@ -46,12 +46,31 @@ Whitefish <- filter(fish, Species == "Whitefish")
 Whitefish <- select(Whitefish, -Species) 
 ```
 
-# For each of the three species of fish listed below, determine the best regression model and also the best 2 element regression model. Use the BestSubset Regression helper file.
 
 
 ## Perch
+```{r}
+library(leaps)
+regsubsets.out <-
+    regsubsets(Weight ~ .,
+               data = Perch,
+               nbest = 1,       # 1 best model for each number of predictors
+               nvmax = NULL,    # NULL for no limit on number of variables
+               force.in = NULL, force.out = NULL,
+               method = "exhaustive")
+
+summary.out <- summary(regsubsets.out)
+as.data.frame(summary.out$outmat)
+library(car)
+subsets(regsubsets.out,statistic="adjr2",legend="bottom",main="Adjusted R^2")
+```
+
+This demonstrates that the ideal model is Height and Width. The best models can be tested further.
 
 ### Best Models
+
+
+
 
 ### Best Two regressor model
 
