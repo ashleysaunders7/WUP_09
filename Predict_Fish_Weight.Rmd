@@ -108,6 +108,7 @@ which.max(summary.out$adjr2)
 The optimal model is the one that incorporates all five variables.
 
 ### Best Two regressor model
+We were able to concentrate its power on the corrected r-squared value by using leaps. Only the highest adjusted r-squared values for the first, second, third, fourth, and fifth variables for pike would then be provided. L1 and L3 are the best two regressors for the highest adjusted r-squared value, making them the top two regressor models, according to this type of jump analysis.
 
 ## Roach
 
