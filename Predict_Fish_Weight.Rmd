@@ -101,6 +101,11 @@ subsets(regsubsets.out,statistic="adjr2",legend="bottomright",main="Adjusted R^2
 The model that incorporates all L1, L2, L3, H, and W seems to be the best one. However, the model that includes L1 and L3 seems to be the best two regressor model.
 
 ### Best Models
+```{r}
+which.max(summary.out$adjr2)
+```
+
+The optimal model is the one that incorporates all five variables.
 
 ### Best Two regressor model
 
