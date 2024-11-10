@@ -68,9 +68,11 @@ subsets(regsubsets.out,statistic="adjr2",legend="bottom",main="Adjusted R^2")
 This demonstrates that the ideal model is Height and Width. The best models can be tested further.
 
 ### Best Models
+```{r}
+which.max(summary.out$adjr2)
+```
 
-
-
+The best model, according to the max codeblock, is number two. Its r-squared value is greater.
 
 ### Best Two regressor model
 
