@@ -82,6 +82,23 @@ summary.out$which[2,]
 This data summary demonstrates that the model that incorporates H and W is the best model for perch fish. It has the greatest Adjusted r-squared value with two variables, indicating that it is the best two regression model.
 
 ## Pike
+```{r}
+library(leaps)
+regsubsets.out <-
+    regsubsets(Weight ~ .,
+               data = Pike,
+               nbest = 1,       # 1 best model for each number of predictors
+               nvmax = NULL,    # NULL for no limit on number of variables
+               force.in = NULL, force.out = NULL,
+               method = "exhaustive")
+
+summary.out <- summary(regsubsets.out)
+as.data.frame(summary.out$outmat)
+library(car)
+subsets(regsubsets.out,statistic="adjr2",legend="bottomright",main="Adjusted R^2")
+```
+
+The model that incorporates all L1, L2, L3, H, and W seems to be the best one. However, the model that includes L1 and L3 seems to be the best two regressor model.
 
 ### Best Models
 
